@@ -1,24 +1,16 @@
 import { useReducer } from "react";
+import { CountAction, STATE } from "../../types/counter";
 
-type STATE = {
-  count: number;
-  value: number;
-};
 const initiatState: STATE = {
   count: 0,
   value: 1
 };
+
 enum CountActionType {
   INCREASE = "INCREASE",
   DECREASE = "DECREASE",
   CHANGE_VALUE = "CHANGE_VALUE",
   RESET = "RESET"
-}
-
-// An interface for our actions
-interface CountAction {
-  type: CountActionType;
-  payload: number;
 }
 
 const reducer = (state: STATE, action: CountAction) => {
@@ -59,7 +51,6 @@ export default function Counter3() {
       payload: +val
     });
   };
-  console.log("state", state);
   return (
     <div>
       <div>

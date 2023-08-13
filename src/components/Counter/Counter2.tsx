@@ -1,9 +1,7 @@
 import { useState } from "react";
+import { STATE } from "../../types/counter";
 
-type STATE = {
-  count: number;
-  value: number;
-};
+
 export default function Counter2() {
   const [state, setState] = useState<STATE>({ count: 0, value: 1 });
   return (
